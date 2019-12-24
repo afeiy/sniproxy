@@ -21,5 +21,6 @@ sed -i "s/xxx.xxx.xxx.xxx/${Client}/g" /etc/nginx/nginx.conf
 systemctl restart sniproxy dnsmasq nginx
 systemctl enable sniproxy dnsmasq nginx
 
-echo "please login v2ray server and run command to check:"
-echo "dig netflix.com ${IP}"
+echo ""
+echo "Please login v2ray server and run command to check:"
+echo "  dig netflix.com ${IP}"
