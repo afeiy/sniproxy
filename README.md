@@ -13,7 +13,7 @@ deb http://nginx.org/packages/$(. /etc/os-release; echo "$ID")/ $(lsb_release -c
 deb-src http://nginx.org/packages/$(. /etc/os-release; echo "$ID")/ $(lsb_release -cs) nginx
 EOF
 apt-get update
-apt-get install nginx -y
+apt-get install nginx=1.16.1* -y
 # change nginx configure file `92` line for your server ip
 cp nginx.conf /etc/nginx/nginx.conf
 
