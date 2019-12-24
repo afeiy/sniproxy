@@ -11,7 +11,7 @@ IP=$(curl -s http://ifconfig.me)
 echo "${green}Install Dnsmasq...${plain}"
 apt-get install dnsmasq -y
 wget https://raw.githubusercontent.com/buxiaomo/sniproxy/master/dnsmasq.conf -O /etc/dnsmasq.conf
-sed -i '/netflix.com/d' /etc/dnsmasq.conf && echo "\naddress=/netflix.com/${IP}" >> /etc/dnsmasq.conf
+sed -i '/netflix.com/d' /etc/dnsmasq.conf && echo -e "\naddress=/netflix.com/${IP}" >> /etc/dnsmasq.conf
 sed -i '/nflxvideo.net/d' /etc/dnsmasq.conf && echo "address=/nflxvideo.net/${IP}" >> /etc/dnsmasq.conf
 systemctl restart dnsmasq
 lsof -i:5353 || (echo "${red}Install Dnsmasq exception...${plain}" && exit 1)
