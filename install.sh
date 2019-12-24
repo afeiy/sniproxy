@@ -18,6 +18,7 @@ apt-get update
 apt-get install nginx=1.16.* -y
 wget https://raw.githubusercontent.com/buxiaomo/sniproxy/master/nginx.conf -O /etc/nginx/nginx.conf
 sed -i "s/xxx.xxx.xxx.xxx/${Client}/g" /etc/nginx/nginx.conf
+rm -rf /etc/nginx/conf.d/*
 systemctl restart sniproxy dnsmasq nginx
 systemctl enable sniproxy dnsmasq nginx
 
