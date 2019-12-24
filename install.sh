@@ -20,3 +20,6 @@ wget https://raw.githubusercontent.com/buxiaomo/sniproxy/master/nginx.conf -O /e
 sed -i "s/xxx.xxx.xxx.xxx/${Client}/g" /etc/nginx/nginx.conf
 systemctl restart sniproxy dnsmasq nginx
 systemctl enable sniproxy dnsmasq nginx
+
+echo "please login v2ray server and run command to check:"
+echo "dig netflix.com ${IP}"
